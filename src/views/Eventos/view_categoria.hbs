@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos la FET</title>
+</head>
+
+<body>
+        <a class="btn btn-primary" href="/admin/admin" role="button">Volver</a>
+
+<div class="container">
+    <div class="col-xl-12 col-lg-12">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+            <center><h1>Tipos de eventos</h1></center>        
+                    <center> <a href="" class="btn btn-block btn-info" data-toggle="modal"
+                            data-target="#modificaUsuarios">Agregar</a></center>
+                    <div class="modal" id="modificaUsuarios">
+                        <div class="modal-dialog">
+                            <div class="modal-content"> 
+                               
+                                <form action="/event/agregar1" method="post" >
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Agregar</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <h5>
+                                            <center> Agregar datos </center>
+                                        </h5>
+                                        <div class="form-group">
+                                            <label for="nombre_ropa">Tipos de eventos :</label>
+                                            <input type="text" value="{{eventos}}" class="form-control"
+                                                 id="" name="eventos">
+                                        </div>
+                                       
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Agregar</button>
+                                        </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                        <tr>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-md-8 col-lg-8">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Eventos</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each Totipodeventos}}
+                                                <tr>
+                                                    <td scope="row">{{id_tipo_evento}} </td>
+                                                    <td>{{eventos}} </td>
+
+                                                  <td>
+                                                 <!---   <a href="delete/{{id_ropa}}" class="">Eliminar</a>-->
+                                                    <a href="" class="btn btn-danger" data-toggle="modal" data-target="#eliminaUsuario{{id_tipo_evento}}">Eliminar</a>
+                                                    <div class="modal" id="eliminaUsuario{{id_tipo_evento}}">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Seguro quiere Elimiar El produto </h4>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal">&times;</button>
+                                                                </div>
+
+                                                                <div class="modal-body">
+                                                            {{eventos}} 
+                                                            <br>
+                                              
+                                                                </div>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <a href="Eliminar1/{{id_tipo_evento}}" class="btn btn-danger">Eliminar</a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        <a href="" class="btn btn-info" data-toggle="modal" data-target="#modificaUsuario{{id_tipo_evento}}">Modificar</a> 
+                                                    <div class="modal" id="modificaUsuario{{id_tipo_evento}}">
+                                                   <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                <form action="/event/modificar2/{{id_tipo_evento}}" method="POST">
+
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Modal Heading</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <div class="modal-body">
+                                            
+                                                    <h5><center> Modificar datos </center></h5>
+
+                                                        <div class="form-group">
+                                                            <label for="nombre_ropa">Tipos de eventos :</label>
+                                                            <input type="text" value="{{eventos}}" class="form-control"
+                                                                id="" name="eventos">
+                                                        </div>
+                                                        
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Modificar</button>
+                                                </div>
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                      
+
+
+                                                            </td>  
+                                                </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    </div>
+        </div>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</div>
+
+</html>
